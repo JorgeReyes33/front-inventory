@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { CategoryComponent } from './modules/category/components/category/category.component';
+
 
 @NgModule({
   declarations: [
