@@ -26,4 +26,23 @@ export class CategoryService {
 
   }
 
+  // this.http.get<SearchResponse>(`${this.serviceUrl}/search`, {params})
+  //     .subscribe( resp => {
+
+  //       this.gifList = resp.data;
+  //       //console.log({gifs: this.gifList});
+
+  //     })
+
+
+  /**
+   * Metodo para guardar las categorias
+   * Definir una interfaz para no utilizar any
+   */
+  saveCategory(body: any) {
+    const endpoint = `${base_url}/categories`;
+    //Enviamos hacia el back el body, para que lo guarde en la bd
+    return this.http.post(endpoint, body);
+  }
+
 }

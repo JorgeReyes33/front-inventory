@@ -1,0 +1,18 @@
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-container > * {
+  width: 100%;
+}
+
+.center-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.center-title {
+  text-align: center;
+}
