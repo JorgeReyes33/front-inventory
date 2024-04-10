@@ -45,6 +45,16 @@ export class CategoryService {
     return this.http.put(endpoint, body);
   }
 
+  /**
+   * Metodo para eliminar categorias
+   */
+  deleteCategory(id: any) {
+    const endpoint = `${base_url}/categories/${id}`;
+    //En este caso utilizamos el metodo delete para eliminar la categoria
+    return this.http.delete(endpoint);
+  }
+
+
 
 
 }
