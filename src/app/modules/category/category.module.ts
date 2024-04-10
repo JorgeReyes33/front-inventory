@@ -21,7 +21,8 @@ import { NewCategoryComponent } from './components/new-category/new-category.com
     ReactiveFormsModule
   ],
   exports: [
-    CategoryComponent
+    CategoryComponent,
+    NewCategoryComponent
   ]
 })
 export class CategoryModule { }

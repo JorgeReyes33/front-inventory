@@ -26,15 +26,6 @@ export class CategoryService {
 
   }
 
-  // this.http.get<SearchResponse>(`${this.serviceUrl}/search`, {params})
-  //     .subscribe( resp => {
-
-  //       this.gifList = resp.data;
-  //       //console.log({gifs: this.gifList});
-
-  //     })
-
-
   /**
    * Metodo para guardar las categorias
    * Definir una interfaz para no utilizar any
@@ -44,5 +35,16 @@ export class CategoryService {
     //Enviamos hacia el back el body, para que lo guarde en la bd
     return this.http.post(endpoint, body);
   }
+
+  /**
+   * Metodo para actualizar una categoria
+   */
+  updateCategory(body: any, id: any) {
+    const endpoint = `${base_url}/categories/${id}`;
+    //En este caso utilizamos el metodo put para actualizar la categoria
+    return this.http.put(endpoint, body);
+  }
+
+
 
 }

@@ -1,5 +1,8 @@
 
-<h2 mat-dialog-title class="center-title"> Agregar Nueva Categoría </h2>
+<h2 mat-dialog-title class="center-title">
+
+  {{estadoForm}} Nueva Categoría
+</h2>
 
 <mat-dialog-content>
 
@@ -23,10 +26,11 @@
 
   <!-- Botones del modal -->
   <button mat-button color="primary" (click)="onSave()" [disabled]="categoryForm.invalid">
-    <mat-icon>save</mat-icon> Guardar
+    <!-- <mat-icon>{{ isUpdating ? 'add' : 'edit' }}</mat-icon> {{ isUpdating ? 'Agregar' : 'Actualizar' }} -->
+    <mat-icon>save</mat-icon> Agregar
   </button>
 
-  <button mat-button color="primary" (click)="onCancel()" [disabled]="categoryForm.invalid">
+  <button mat-button color="primary" (click)="onCancel()" >
     <mat-icon>cancel</mat-icon> Cancelar
   </button>
 
