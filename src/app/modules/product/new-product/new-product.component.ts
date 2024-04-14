@@ -109,9 +109,6 @@ export class NewProductComponent implements OnInit {
 
     }
 
-
-
-
   }
 
   onCancel() {

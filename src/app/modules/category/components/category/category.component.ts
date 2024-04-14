@@ -137,6 +137,7 @@ export class CategoryComponent implements OnInit{
     const dialogRef = this.dialog.open(ConfirmComponent, {
       data:{
         id: id,
+        module: "category"
       },
     });
 
