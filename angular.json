@@ -23,6 +23,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "base64-js",
+              "js-sha256"
+            ],
             "outputPath": "dist/front-inventory",
             "index": "src/index.html",
             "browser": "src/main.ts",
