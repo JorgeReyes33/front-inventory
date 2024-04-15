@@ -15,12 +15,14 @@
           </button>
         </li>
         <li>
-          <button mat-button [matMenuTriggerFor]="menu">
+          <button mat-button [matMenuTriggerFor]="menu" >
             <mat-icon>person_outline</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <mat-icon>exit_to_app</mat-icon>
-            Cerrar sesión
+            <button mat-menu-item (click)="logout()">
+              <mat-icon>exit_to_app</mat-icon>
+              Cerrar sesión
+            </button>
           </mat-menu>
         </li>
       </ul>
@@ -45,8 +47,7 @@
         <!-- perfil -->
         <div class="profile-card">
           <div class="header">
-            <h2>Jorge Reyes</h2>
-            <h4>jorgereyes22.com</h4>
+            <h2>{{username}}</h2>
           </div>
         </div>
 
