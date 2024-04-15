@@ -6,13 +6,17 @@ import { NewCategoryComponent } from '../new-category/new-category.component';
 import { MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar';
 import { ConfirmComponent } from '../../../shared/components/confirm/confirm.component';
 import { MatPaginator } from '@angular/material/paginator';
+import { UtilService } from '../../../shared/services/util.service';
 
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
   styleUrl: './category.component.css'
 })
-export class CategoryComponent implements OnInit{
+export class CategoryComponent implements OnInit {
+
+  //Variables globales
+  isAdmin: any;
 
   /**
    * Inyectar el servicio de categorias en este componente
@@ -23,6 +27,7 @@ export class CategoryComponent implements OnInit{
   private categoryService = inject(CategoryService);
   private snackBar = inject(MatSnackBar);
   private dialog = inject(MatDialog);
+  private util = inject(UtilService);
 
   /**
    * Al iniciarse el ciclo de vida de este componente,
@@ -30,6 +35,8 @@ export class CategoryComponent implements OnInit{
    */
   ngOnInit(): void {
     this.getCategories();
+    console.log(this.util.getRoles());
+    this.isAdmin = this.util.isAdmin();
   }
 
   /**

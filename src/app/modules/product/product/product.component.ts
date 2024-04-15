@@ -6,6 +6,7 @@ import { MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material/s
 import { MatDialog } from '@angular/material/dialog';
 import { NewProductComponent } from '../new-product/new-product.component';
 import { ConfirmComponent } from '../../shared/components/confirm/confirm.component';
+import { UtilService } from '../../shared/services/util.service';
 
 
 @Component({
@@ -15,16 +16,21 @@ import { ConfirmComponent } from '../../shared/components/confirm/confirm.compon
 })
 export class ProductComponent implements OnInit {
 
+  //Variables globales
+  isAdmin: any;
+
   //Injectar el servicio
   private productService = inject(ProductService)
   private snackBar = inject(MatSnackBar);
   public dialog = inject(MatDialog)
+  private util = inject(UtilService);
 
   ngOnInit(): void {
 
     //Se manda llamar aqui el metodo para que al iniciar
     //el componente se mande llamar
     this.getProducts();
+    this.isAdmin = this.util.isAdmin();
 
   }
 
