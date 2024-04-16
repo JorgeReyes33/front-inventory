@@ -7,6 +7,9 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CategoryComponent } from './modules/category/components/category/category.component';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+//import { NgChartsModule } from 'ng2-charts';
+import { NgChartsModule } from 'ng2-charts';
+
 
 //Implementacion de keycloak con angular
 function initializeKeycloak(keycloak: KeycloakService) {
@@ -38,7 +41,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     BrowserModule,
     AppRoutingModule,
     DashboardModule,
-    KeycloakAngularModule
+    KeycloakAngularModule,
+    NgChartsModule
   ],
   providers: [
     provideAnimationsAsync(),
@@ -47,7 +51,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
       useFactory: initializeKeycloak,
       multi: true,
       deps: [KeycloakService]
-    }
+    },
   ],
   bootstrap: [AppComponent]
 })
